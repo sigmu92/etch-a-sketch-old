@@ -1,0 +1,22 @@
+body{
+    background-color: aqua;
+}
+.container{
+    display:grid;
+    width: 720px;
+    height: 720px;
+    top: 50%;
+    left: 50%;
+    margin-top: -33vh;
+    margin-left: -20vw;
+    position: fixed;
+    background-color: white;
+    border: solid;
+    border-radius:10px;
+    border-color: black;
+    
+}
+.hovered{
+    background-color:black;
+    transition: 0.15s;
+}
