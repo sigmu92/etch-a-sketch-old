@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
-let dimension=128;
+const main = document.querySelector('.main-container');
+let dimension=4;
 function createGrid(dimension){
     let columnWidth=(720/dimension);
     let rowWidth=(720/dimension);
@@ -32,6 +33,7 @@ function assignFillIn(){
     let newDivs = document.querySelectorAll('div');
     newDivs.forEach(div => div.addEventListener("mouseenter",change));
     container.removeEventListener('mouseenter',change);
+    main.removeEventListener('mouseenter', change);
 }
 
 function clearScreen(){
@@ -45,7 +47,6 @@ function clearScreen(){
 }
 
 createGrid(dimension);
-
 
 const button = document.querySelector('button');
 button.addEventListener('click', clearScreen);
