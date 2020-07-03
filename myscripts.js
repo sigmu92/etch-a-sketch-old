@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+let dimension=128;
 function createGrid(dimension){
     let columnWidth=(720/dimension);
     let rowWidth=(720/dimension);
@@ -13,7 +14,7 @@ function createGrid(dimension){
         }
 
     }
-    
+    assignFillIn();
 }
 function createDiv(r,c,count){
     let newDiv = document.createElement('div');
@@ -25,11 +26,26 @@ function createDiv(r,c,count){
 }
 
 function change(e){
-    // if (this.id ="container") return;
     this.classList.add('hovered');
-
 }
-createGrid(16);
-divs = document.querySelectorAll('div');
-divs.forEach(div => div.addEventListener("mouseenter",change));
-container.removeEventListener('mouseenter',change);
+function assignFillIn(){
+    let newDivs = document.querySelectorAll('div');
+    newDivs.forEach(div => div.addEventListener("mouseenter",change));
+    container.removeEventListener('mouseenter',change);
+}
+
+function clearScreen(){
+    let filledDivs = document.getElementsByClassName('hovered');
+    let loopRun = filledDivs.length;
+    for(i=loopRun-1; i> -1; i--){
+        filledDivs[i].classList.remove('hovered');
+    }
+    dimension = prompt("Enter grid size")
+    createGrid(dimension);
+}
+
+createGrid(dimension);
+
+
+const button = document.querySelector('button');
+button.addEventListener('click', clearScreen);
