@@ -1,5 +1,7 @@
+
 const container = document.querySelector(".container");
 const main = document.querySelector('.main-container');
+
 let dimension=4;
 function createGrid(dimension){
     let columnWidth=(720/dimension);
@@ -22,8 +24,7 @@ function createDiv(r,c,count){
     newDiv.id = "div"+count;
     newDiv.style.gridColumn = `${c}, span 1`;
     newDiv.style.gridRow = `${r}, span 1`;
-    return(newDiv)
-     
+    return(newDiv)   
 }
 
 function change(e){
